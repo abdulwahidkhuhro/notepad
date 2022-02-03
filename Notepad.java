@@ -1,0 +1,6 @@
+
+class Notepad{
+	public Notepad(){
+		
+	}
+}
