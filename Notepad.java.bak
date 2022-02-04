@@ -1,7 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-class Notepad{
+import java.io.*;
+class Notepad implements ActionListener{
 	private JFrame window = new JFrame();
 	private JTextArea textArea = new JTextArea();
 	private JMenuBar notePadMenuBar = new JMenuBar();
@@ -47,7 +48,7 @@ class Notepad{
 	private JMenuItem font = new JMenuItem("Font...");
 	
 	// view menuitems
-	private JMenuItem zoom = new JMenuItem("Zoom");
+	private JMenu zoom = new JMenu("Zoom");
 	private JMenuItem zoomIn = new JMenuItem("Zoom In");
 	private JMenuItem zoomOut = new JMenuItem("Zoom Out");
 	private JMenuItem restorDefaultZoom = new JMenuItem("Restor Default Zoom");
@@ -78,6 +79,7 @@ class Notepad{
 			if( i == 5 || i == 7)
 				file.addSeparator();
 			file.add(fileMenuItems[i]);
+			fileMenuItems[i].addActionListener(this);
 			
 		}
 		
@@ -100,10 +102,12 @@ class Notepad{
 		zoom.add(restorDefaultZoom);
 		view.add(zoom);
 		
+		
 		view.add(statusBar);
 		
 		help.add(viewHelp);
 		help.add(sendFeedback);
+		help.addSeparator();
 		help.add(aboutNotepad);
 		
 		wordWrap.setFont(menuBarFont);
@@ -116,9 +120,41 @@ class Notepad{
 		sendFeedback.setFont(menuBarFont);
 		aboutNotepad.setFont(menuBarFont);
 		window.setJMenuBar(notePadMenuBar);
-		window.add(textArea);
+		windowPanel.add(textArea);
+		window.add(windowPanel);
 		window.setVisible(true);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public void actionPerformed(ActionEvent e){
+		if(fileMenuItems[2] == e.getSource()){
+			openFile();
+		}
+	}
+	
+	private void openFile(){
+		FileDialog openDialog = new FileDialog(window,"Open");
+		openDialog.show();
+		
+		String directoryPath = openDialog.getDirectory();
+		String fileName = openDialog.getFile();
+		
+		String filePath = directoryPath+fileName;
+		
+		try{
+			FileInputStream fin = new FileInputStream(filePath);
+			int size = fin.available();
+			byte[] data = new byte[size];
+			
+			fin.read(data,0,size);
+			
+			String str = new String(data,0,size);
+			textArea.setText(str);
+			
+			fin.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	public static void main(String[] args){
