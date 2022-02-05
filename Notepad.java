@@ -16,6 +16,7 @@ class Notepad implements ActionListener{
 	private String fileName = "";
 	private String directoryPath = "";
 	private String path = "";
+	private int zoomValue = 15;
 	private String[] fileMenuItemsNames = new String[]{
 		"New",
 		"New Window",
@@ -66,6 +67,7 @@ class Notepad implements ActionListener{
 		window.setBounds(300,100,800,600);
 		window.setLayout(new BorderLayout(5,5));
 		window.setTitle("New File");
+		textArea.setFont(new Font("Arial",Font.PLAIN,15));
 		
 		file.setFont(menuBarFont);
 		notePadMenuBar.add(file);
@@ -106,6 +108,9 @@ class Notepad implements ActionListener{
 		zoom.add(zoomIn);
 		zoom.add(zoomOut);
 		zoom.add(restorDefaultZoom);
+		zoomIn.addActionListener(this);
+		zoomOut.addActionListener(this);
+		restorDefaultZoom.addActionListener(this);
 		view.add(zoom);
 		
 		
@@ -163,6 +168,20 @@ class Notepad implements ActionListener{
 		if(editMenuItems[3] == e.getSource()){
 			paste();
 			System.out.println("here is this");
+		}
+		if(zoomIn == e.getSource()){
+			if(zoomValue >= 15){
+				zoomValue += 5;
+			}
+			textArea.setFont(new Font("Arial",Font.PLAIN,zoomValue));
+		}else if(zoomOut == e.getSource()){
+			if(zoomValue > 15){
+				zoomValue -= 5;
+			}
+			textArea.setFont(new Font("Arial",Font.PLAIN,zoomValue));
+		}else if(restorDefaultZoom == e.getSource()){
+			zoomValue = 15;
+			textArea.setFont(new Font("Arial",Font.PLAIN,zoomValue));
 		}
 	}
 	
