@@ -12,7 +12,7 @@ class Notepad implements ActionListener{
 	private JMenu format = new JMenu("Format");
 	private JMenu view = new JMenu("View");
 	private JMenu help = new JMenu("Help");
-	private Font menuBarFont = new Font("Arial",Font.PLAIN,15);
+	private Font menuBarFont = new Font("Arial",Font.PLAIN,12);
 	private String fileName = "";
 	private String directoryPath = "";
 	private String path = "";
