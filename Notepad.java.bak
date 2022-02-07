@@ -12,7 +12,7 @@ class Notepad implements ActionListener{
 	private JMenu format = new JMenu("Format");
 	private JMenu view = new JMenu("View");
 	private JMenu help = new JMenu("Help");
-	private Font menuBarFont = new Font("Arial",Font.PLAIN,15);
+	private Font menuBarFont = new Font("Arial",Font.PLAIN,12);
 	private String fileName = "";
 	private String directoryPath = "";
 	private String path = "";
@@ -165,10 +165,53 @@ class Notepad implements ActionListener{
 			fileExit();
 		}
 		
-		if(editMenuItems[3] == e.getSource()){
+		/*
+		
+		"Undo",
+		"Cut",
+		"Copy",
+		"Paste",
+		"Delete",
+		"Search with Bing...",
+		"Find...",
+		"Find Next",
+		"Find Previous",
+		"Replace...",
+		"Go To...",
+		"Select All",
+		"Time/Date"
+		
+		*/
+		
+		if(editMenuItems[0] == e.getSource()){
+			
+		}else if(editMenuItems[1] == e.getSource()){
+			
+		}else if(editMenuItems[2] == e.getSource()){
+			
+		}else if(editMenuItems[3] == e.getSource()){
 			paste();
 			System.out.println("here is this");
+		}else if(editMenuItems[4] == e.getSource()){
+			
+		}else if(editMenuItems[5] == e.getSource()){
+			
+		}else if(editMenuItems[6] == e.getSource()){
+			
+		}else if(editMenuItems[7] == e.getSource()){
+			
+		}else if(editMenuItems[8] == e.getSource()){
+			
+		}else if(editMenuItems[9] == e.getSource()){
+			
+		}else if(editMenuItems[10] == e.getSource()){
+			
+		}else if(editMenuItems[11] == e.getSource()){
+			textArea.selectAll();
+		}else if(editMenuItems[12] == e.getSource()){
+			
 		}
+		
 		if(zoomIn == e.getSource()){
 			if(zoomValue >= 15){
 				zoomValue += 5;

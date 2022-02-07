@@ -181,6 +181,7 @@ class Notepad implements ActionListener{
 		"Select All",
 		"Time/Date"
 		
+		
 		*/
 		
 		if(editMenuItems[0] == e.getSource()){
@@ -191,7 +192,6 @@ class Notepad implements ActionListener{
 			
 		}else if(editMenuItems[3] == e.getSource()){
 			paste();
-			System.out.println("here is this");
 		}else if(editMenuItems[4] == e.getSource()){
 			
 		}else if(editMenuItems[5] == e.getSource()){
