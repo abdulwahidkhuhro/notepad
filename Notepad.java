@@ -185,31 +185,33 @@ class Notepad implements ActionListener{
 		*/
 		
 		if(editMenuItems[0] == e.getSource()){
-			
+			JOptionPane.showMessageDialog(window,"Undo is pressed");
 		}else if(editMenuItems[1] == e.getSource()){
-			
+			JOptionPane.showMessageDialog(window,"Cut is pressed");
 		}else if(editMenuItems[2] == e.getSource()){
-			
+			JOptionPane.showMessageDialog(window,"Copy is pressed");
+			String str = textArea.getSelected();
 		}else if(editMenuItems[3] == e.getSource()){
 			paste();
 		}else if(editMenuItems[4] == e.getSource()){
-			
+			JOptionPane.showMessageDialog(window,"Delete is pressed is pressed");
 		}else if(editMenuItems[5] == e.getSource()){
-			
+			JOptionPane.showMessageDialog(window,"Search with Bing is pressed");
 		}else if(editMenuItems[6] == e.getSource()){
+			JOptionPane.showMessageDialog(window,"Find is pressed");
 			
 		}else if(editMenuItems[7] == e.getSource()){
-			
+			JOptionPane.showMessageDialog(window,"Find Next is pressed");
 		}else if(editMenuItems[8] == e.getSource()){
-			
+			JOptionPane.showMessageDialog(window,"Find previous is pressed");
 		}else if(editMenuItems[9] == e.getSource()){
-			
+			JOptionPane.showMessageDialog(window,"Replace is pressed");
 		}else if(editMenuItems[10] == e.getSource()){
-			
+			JOptionPane.showMessageDialog(window,"Go to is pressed");
 		}else if(editMenuItems[11] == e.getSource()){
 			textArea.selectAll();
 		}else if(editMenuItems[12] == e.getSource()){
-			
+			JOptionPane.showMessageDialog(window,"Time/Date is pressed");
 		}
 		
 		if(zoomIn == e.getSource()){
