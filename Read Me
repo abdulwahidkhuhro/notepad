@@ -1,0 +1,8 @@
+This project is coded in Notepad++. You can run it by cmd open the project directory in 
+cmd and execute following two commands 
+
+  1) javac Notepad.java
+  2) java Notepad
+  
+this project will only run if on your system jdk is installed and you had set the 
+path for java jdk to run programs 
