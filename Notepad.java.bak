@@ -191,7 +191,6 @@ class Notepad implements ActionListener{
 		}else if(editMenuItems[2] == e.getSource()){
 			JOptionPane.showMessageDialog(window,"Copy is pressed");
 			String str = textArea.getSelected();
-			System.out.println(str);
 		}else if(editMenuItems[3] == e.getSource()){
 			paste();
 		}else if(editMenuItems[4] == e.getSource()){

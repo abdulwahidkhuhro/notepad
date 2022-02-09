@@ -190,7 +190,6 @@ class Notepad implements ActionListener{
 			JOptionPane.showMessageDialog(window,"Cut is pressed");
 		}else if(editMenuItems[2] == e.getSource()){
 			JOptionPane.showMessageDialog(window,"Copy is pressed");
-			String str = textArea.getSelected();
 		}else if(editMenuItems[3] == e.getSource()){
 			paste();
 		}else if(editMenuItems[4] == e.getSource()){
